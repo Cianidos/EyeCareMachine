@@ -10,7 +10,7 @@ namespace WindowsFormsApp1.CV_Core
 {
     class FaceClassifier : IClassifier
     {
-        private const string path = "D:\\Projects\\source\\repos\\WindowsFormsApp1\\WindowsFormsApp1\\res\\haarcascade_frontalface_alt.xml";
+        private const string path = "D:\\Projects\\source\\repos\\EyeCareMachine\\EyeCareMachine\\res\\haarcascade_frontalface_alt.xml";
         private readonly CascadeClassifier classer;
 
         public FaceClassifier()
@@ -18,11 +18,11 @@ namespace WindowsFormsApp1.CV_Core
             classer = new CascadeClassifier(path);
         }
 
-        public void Detect(IInputArray image, out Rectangle[] rec)
+        public void Detect(ref Mat image, out Rectangle[] rec)
         {
-            rec = Detect(image);
+            rec = Detect(ref image);
         }
-        public Rectangle[] Detect(IInputArray image)
+        public Rectangle[] Detect(ref Mat image)
         {
             return classer.DetectMultiScale(image);
         }

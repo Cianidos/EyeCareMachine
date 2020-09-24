@@ -16,7 +16,7 @@ namespace EyeCareMachine.CV_Core
             capture = new VideoCapture(0);
             capture.Start();
         }
-        public void GetFrame(Mat frame)
+        public void GetFrame(ref Mat frame)
         {
             capture.Read(frame);
         }

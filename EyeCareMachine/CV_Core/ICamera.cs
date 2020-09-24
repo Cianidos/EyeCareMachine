@@ -8,6 +8,6 @@ namespace EyeCareMachine.CV_Core
 {
     interface ICamera
     {
-        void GetFrame(Emgu.CV.Mat frame);
+        void GetFrame(ref Emgu.CV.Mat frame);
     }
 }

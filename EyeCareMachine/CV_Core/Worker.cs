@@ -8,6 +8,7 @@ using Emgu.CV;
 using System.Drawing;
 using Emgu.CV.Structure;
 using Emgu.CV.CvEnum;
+using Emgu.CV.Tracking;
 
 namespace WindowsFormsApp1.CV_Core
 {
@@ -17,19 +18,22 @@ namespace WindowsFormsApp1.CV_Core
         private ICamera camera;
         private IClassifier face;
         private Mat frame;
+        private Emgu.CV.Tracking.Tracker tracker;
 
         public Worker()
         {
             camera = new Camera();
             face = new FaceClassifier();
             frame = new Mat();
+            tracker = new TrackerBoosting();
         }
 
         public StdImg GetImage()
         {
-            camera.GetFrame(frame);
+            camera.GetFrame(ref frame);
             Processing();
-            DrawRects(face.Detect(frame));
+            DrawRects(
+                face.Detect(ref frame));
             return frame.ToImage<Bgr, Byte>();
         }
         private void Processing()
