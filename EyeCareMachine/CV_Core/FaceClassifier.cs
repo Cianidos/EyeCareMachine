@@ -6,18 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp1.CV_Core
+namespace EyeCareMachine.CV_Core
 {
     class FaceClassifier : IClassifier
     {
         private const string path = "D:\\Projects\\source\\repos\\EyeCareMachine\\EyeCareMachine\\res\\haarcascade_frontalface_alt.xml";
         private readonly CascadeClassifier classer;
-
         public FaceClassifier()
         {
             classer = new CascadeClassifier(path);
         }
-
         public void Detect(ref Mat image, out Rectangle[] rec)
         {
             rec = Detect(ref image);

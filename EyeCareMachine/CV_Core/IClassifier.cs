@@ -2,7 +2,7 @@
 using System.Drawing;
 
 
-namespace WindowsFormsApp1.CV_Core
+namespace EyeCareMachine.CV_Core
 {
     interface IClassifier
     {

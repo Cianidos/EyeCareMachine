@@ -16,7 +16,7 @@ using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using Emgu.CV.Tracking;
 using Emgu.CV.Util;
-using WindowsFormsApp1.CV_Core;
+using EyeCareMachine.CV_Core;
 
 namespace EyeCareMachine
 {
@@ -44,6 +44,16 @@ namespace EyeCareMachine
         private void timer1_Tick(object sender, EventArgs e)
         {
             imageBox1.Image = worker.GetImage();
+        }
+
+        private void chb_tracking_CheckedChanged(object sender, EventArgs e)
+        {
+            worker.Tracking = chb_tracking.Checked;
+        }
+
+        private void b_track_init_Click(object sender, EventArgs e)
+        {
+            worker.TrackingInit();
         }
     }
 }

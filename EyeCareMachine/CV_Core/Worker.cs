@@ -6,35 +6,54 @@ using System.Text;
 using System.Threading.Tasks;
 using Emgu.CV;
 using System.Drawing;
+using System.Windows.Forms.VisualStyles;
 using Emgu.CV.Structure;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Tracking;
 
-namespace WindowsFormsApp1.CV_Core
+namespace EyeCareMachine.CV_Core
 {
     using StdImg = Image<Bgr, Byte>;
     class Worker
     {
         private ICamera camera;
-        private IClassifier face;
-        private Mat frame;
+        private IClassifier faceFinder;
         private Emgu.CV.Tracking.Tracker tracker;
+        private Mat frame;
+        private Rectangle face;
+
+        public bool Tracking { get; set; }
 
         public Worker()
         {
             camera = new Camera();
-            face = new FaceClassifier();
+            faceFinder = new FaceClassifier();
             frame = new Mat();
+        }
+
+        public void TrackingInit()
+        {
             tracker = new TrackerBoosting();
+            tracker.Init(frame, face);
         }
 
         public StdImg GetImage()
         {
             camera.GetFrame(ref frame);
-            Processing();
-            DrawRects(
-                face.Detect(ref frame));
+            //Processing();
+
+            if (Tracking)
+            { tracker.Update(frame, out face); }
+            else
+            { ChooseFace(faceFinder.Detect(ref frame)); }
+
+            DrawRects(new[] { face });
             return frame.ToImage<Bgr, Byte>();
+        }
+        private void ChooseFace(in Rectangle[] rectangles)
+        {
+            if (rectangles != null)
+                face = rectangles.Max<Rectangle>();
         }
         private void Processing()
         {

@@ -30,9 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.button1 = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.b_start = new System.Windows.Forms.Button();
             this.imageBox1 = new Emgu.CV.UI.ImageBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.chb_tracking = new System.Windows.Forms.CheckBox();
+            this.b_track_init = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -48,7 +50,9 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.b_track_init);
+            this.splitContainer1.Panel1.Controls.Add(this.chb_tracking);
+            this.splitContainer1.Panel1.Controls.Add(this.b_start);
             // 
             // splitContainer1.Panel2
             // 
@@ -57,20 +61,15 @@
             this.splitContainer1.SplitterDistance = 134;
             this.splitContainer1.TabIndex = 0;
             // 
-            // button1
+            // b_start
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 32;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.b_start.Location = new System.Drawing.Point(12, 12);
+            this.b_start.Name = "b_start";
+            this.b_start.Size = new System.Drawing.Size(75, 23);
+            this.b_start.TabIndex = 0;
+            this.b_start.Text = "Start";
+            this.b_start.UseVisualStyleBackColor = true;
+            this.b_start.Click += new System.EventHandler(this.button1_Click);
             // 
             // imageBox1
             // 
@@ -80,6 +79,32 @@
             this.imageBox1.Size = new System.Drawing.Size(971, 640);
             this.imageBox1.TabIndex = 2;
             this.imageBox1.TabStop = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 32;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // chb_tracking
+            // 
+            this.chb_tracking.AutoSize = true;
+            this.chb_tracking.Location = new System.Drawing.Point(12, 78);
+            this.chb_tracking.Name = "chb_tracking";
+            this.chb_tracking.Size = new System.Drawing.Size(68, 17);
+            this.chb_tracking.TabIndex = 1;
+            this.chb_tracking.Text = "Tracking";
+            this.chb_tracking.UseVisualStyleBackColor = true;
+            this.chb_tracking.CheckedChanged += new System.EventHandler(this.chb_tracking_CheckedChanged);
+            // 
+            // b_track_init
+            // 
+            this.b_track_init.Location = new System.Drawing.Point(13, 42);
+            this.b_track_init.Name = "b_track_init";
+            this.b_track_init.Size = new System.Drawing.Size(75, 23);
+            this.b_track_init.TabIndex = 2;
+            this.b_track_init.Text = "Track Init";
+            this.b_track_init.UseVisualStyleBackColor = true;
+            this.b_track_init.Click += new System.EventHandler(this.b_track_init_Click);
             // 
             // Form1
             // 
@@ -91,6 +116,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
@@ -102,9 +128,11 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button b_start;
         private System.Windows.Forms.Timer timer1;
         private Emgu.CV.UI.ImageBox imageBox1;
+        private System.Windows.Forms.CheckBox chb_tracking;
+        private System.Windows.Forms.Button b_track_init;
     }
 }
 

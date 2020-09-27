@@ -139,7 +139,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="res\frontalEyes35x16.xml" />
+    <Content Include="res\haarcascade_both_eyes.xml" />
     <Content Include="res\haarcascade_frontalface_alt.xml" />
+    <Content Include="res\haarcascade_frontalface_alt2.xml" />
+    <Content Include="res\haarcascade_frontalface_alt_tree.xml" />
+    <Content Include="res\haarcascade_frontalface_default.xml" />
+    <Content Include="res\haarcascade_left_eye.xml" />
+    <Content Include="res\haarcascade_profileface.xml" />
+    <Content Include="res\haarcascade_right_eye.xml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
