@@ -8,21 +8,11 @@ using System.Threading.Tasks;
 
 namespace EyeCareMachine.CV_Core
 {
-    class FaceClassifier : IClassifier
+
+    class FaceClassifier : AClassifier
     {
-        private const string path = "D:\\Projects\\source\\repos\\EyeCareMachine\\EyeCareMachine\\res\\haarcascade_frontalface_alt.xml";
-        private readonly CascadeClassifier classer;
-        public FaceClassifier()
+        public FaceClassifier(string path = "D:\\Projects\\source\\repos\\EyeCareMachine\\EyeCareMachine\\res\\haarcascade_frontalface_alt.xml") : base(path)
         {
-            classer = new CascadeClassifier(path);
-        }
-        public void Detect(ref Mat image, out Rectangle[] rec)
-        {
-            rec = Detect(ref image);
-        }
-        public Rectangle[] Detect(ref Mat image)
-        {
-            return classer.DetectMultiScale(image);
         }
     }
 }

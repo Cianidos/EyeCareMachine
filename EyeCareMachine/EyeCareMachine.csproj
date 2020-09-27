@@ -99,6 +99,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CV_Core\Camera.cs" />
+    <Compile Include="CV_Core\AClassifier.cs" />
+    <Compile Include="CV_Core\EyeClassifier.cs" />
     <Compile Include="CV_Core\FaceClassifier.cs" />
     <Compile Include="CV_Core\ICamera.cs" />
     <Compile Include="CV_Core\IClassifier.cs" />
@@ -141,6 +143,7 @@
   <ItemGroup>
     <Content Include="res\frontalEyes35x16.xml" />
     <Content Include="res\haarcascade_both_eyes.xml" />
+    <Content Include="res\haarcascade_eye_tree_eyeglasses.xml" />
     <Content Include="res\haarcascade_frontalface_alt.xml" />
     <Content Include="res\haarcascade_frontalface_alt2.xml" />
     <Content Include="res\haarcascade_frontalface_alt_tree.xml" />

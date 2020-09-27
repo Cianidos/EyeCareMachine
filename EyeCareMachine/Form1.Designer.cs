@@ -35,11 +35,13 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.chb_tracking = new System.Windows.Forms.CheckBox();
             this.b_track_init = new System.Windows.Forms.Button();
+            this.imageBox2 = new Emgu.CV.UI.ImageBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -56,9 +58,10 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.imageBox2);
             this.splitContainer1.Panel2.Controls.Add(this.imageBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(1109, 640);
-            this.splitContainer1.SplitterDistance = 134;
+            this.splitContainer1.Size = new System.Drawing.Size(1314, 767);
+            this.splitContainer1.SplitterDistance = 158;
             this.splitContainer1.TabIndex = 0;
             // 
             // b_start
@@ -73,10 +76,9 @@
             // 
             // imageBox1
             // 
-            this.imageBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imageBox1.Location = new System.Drawing.Point(0, 0);
             this.imageBox1.Name = "imageBox1";
-            this.imageBox1.Size = new System.Drawing.Size(971, 640);
+            this.imageBox1.Size = new System.Drawing.Size(637, 456);
             this.imageBox1.TabIndex = 2;
             this.imageBox1.TabStop = false;
             // 
@@ -106,12 +108,20 @@
             this.b_track_init.UseVisualStyleBackColor = true;
             this.b_track_init.Click += new System.EventHandler(this.b_track_init_Click);
             // 
+            // imageBox2
+            // 
+            this.imageBox2.Location = new System.Drawing.Point(702, 42);
+            this.imageBox2.Name = "imageBox2";
+            this.imageBox2.Size = new System.Drawing.Size(362, 341);
+            this.imageBox2.TabIndex = 2;
+            this.imageBox2.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1109, 640);
+            this.ClientSize = new System.Drawing.Size(1314, 767);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -121,6 +131,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -133,6 +144,7 @@
         private Emgu.CV.UI.ImageBox imageBox1;
         private System.Windows.Forms.CheckBox chb_tracking;
         private System.Windows.Forms.Button b_track_init;
+        private Emgu.CV.UI.ImageBox imageBox2;
     }
 }
 

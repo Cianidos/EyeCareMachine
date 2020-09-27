@@ -18,7 +18,14 @@ namespace EyeCareMachine.CV_Core
         }
         public void GetFrame(ref Mat frame)
         {
-            capture.Read(frame);
+            try
+            {
+                capture.Read(frame);
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
         }
         ~Camera()
         {
